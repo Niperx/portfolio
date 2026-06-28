@@ -14,7 +14,7 @@ interface IsoStudioProps {
  */
 export function IsoStudio({ minimal = false }: IsoStudioProps) {
   const floorMat = useMemo(() => {
-    const mat = sketchMat(MONO.mid);
+    const mat = sketchMat(MONO.paper);
     mat.map = getPaperTexture();
     return mat;
   }, []);
