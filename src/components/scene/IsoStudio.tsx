@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { Grid } from '@react-three/drei';
 import { MONO, SCENE_COLORS } from '../../utils/colors';
-import { sketchMat, getPaperTexture } from '../../utils/materials';
+import { sketchMat, getFloorTexture } from '../../utils/materials';
 import { SketchDecor } from './sketch/SketchDecor';
 
 interface IsoStudioProps {
@@ -14,8 +14,8 @@ interface IsoStudioProps {
  */
 export function IsoStudio({ minimal = false }: IsoStudioProps) {
   const floorMat = useMemo(() => {
-    const mat = sketchMat(MONO.mid);
-    mat.map = getPaperTexture();
+    const mat = sketchMat(MONO.light);
+    mat.map = getFloorTexture();
     return mat;
   }, []);
 
