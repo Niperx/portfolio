@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" fill="none">
+  <rect width="400" height="250" fill="#0a0f0a"/>
+  <rect x="20" y="20" width="360" height="210" rx="12" fill="#121f12" stroke="#22c55e" stroke-width="1" opacity="0.5"/>
+  <text x="200" y="55" fill="#22c55e" font-family="system-ui" font-size="18" font-weight="bold" text-anchor="middle">PalworldManager</text>
+  <circle cx="200" cy="100" r="8" fill="#22c55e"/>
+  <text x="220" y="105" fill="#22c55e" font-family="system-ui" font-size="14">Server ONLINE</text>
+  <text x="50" y="140" fill="#94a3b8" font-family="monospace" font-size="11">Players: 8/32</text>
+  <text x="50" y="160" fill="#94a3b8" font-family="monospace" font-size="11">Uptime: 14h 23m</text>
+  <text x="50" y="180" fill="#94a3b8" font-family="monospace" font-size="11">RAM: 4.2 / 16 GB</text>
+  <rect x="250" y="125" width="100" height="30" rx="6" fill="#22c55e" opacity="0.2" stroke="#22c55e"/>
+  <text x="275" y="145" fill="#22c55e" font-family="system-ui" font-size="11">/restart</text>
+  <rect x="250" y="165" width="100" height="30" rx="6" fill="#22c55e" opacity="0.2" stroke="#22c55e"/>
+  <text x="268" y="185" fill="#22c55e" font-family="system-ui" font-size="11">/backup</text>
+</svg>

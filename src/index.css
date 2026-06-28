@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mono-bg: #0a0a0a;
+  --color-mono-surface: #141414;
+  --color-mono-border: #2a2a2a;
+  --color-mono-gray: #6b6b6b;
+  --color-mono-light: #b0b0b0;
+  --color-mono-paper: #e8e4dc;
+  --color-accent-teal: #5eead4;
+  --color-accent-lemon: #fbbf24;
+  /* Legacy aliases */
+  --color-lab-bg: #0a0a0a;
+  --color-lab-surface: #141414;
+  --color-lab-border: #2a2a2a;
+  --color-bio-teal: #5eead4;
+  --color-bio-purple: #b0b0b0;
+  --color-bio-green: #fbbf24;
+  --color-cyber-bg: #0a0a0a;
+  --color-cyber-surface: #141414;
+  --color-cyber-border: #2a2a2a;
+  --color-neon-blue: #5eead4;
+  --color-neon-purple: #b0b0b0;
+  --color-neon-green: #fbbf24;
+  --font-display: "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Cascadia Code", "Fira Code", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-mono-bg);
+  color: #e8e4dc;
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Лёгкая бумажная текстура на UI */
+.paper-texture {
+  background-color: var(--color-mono-surface);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(176, 176, 176, 0.3);
+  border-radius: 2px;
+}
+
+.tg-dark {
+  --tg-bg: #0e1621;
+  --tg-secondary: #17212b;
+  --tg-bubble-out: #2b5278;
+  --tg-bubble-in: #182533;
+  --tg-text: #f5f5f5;
+  --tg-muted: #6c7883;
+  --tg-accent: #6ab2f2;
+}
+
+@keyframes message-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-message-in { animation: message-in 0.3s ease-out forwards; }
+
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+.typing-dot:nth-child(1) { animation: typing-dot 1.2s infinite 0s; }
+.typing-dot:nth-child(2) { animation: typing-dot 1.2s infinite 0.2s; }
+.typing-dot:nth-child(3) { animation: typing-dot 1.2s infinite 0.4s; }
+
+@keyframes sketch-draw {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}

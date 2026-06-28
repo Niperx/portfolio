@@ -1,0 +1,116 @@
+import type { Project } from '../types/project';
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: 'TelegramRoulette v2',
+    category: 'Telegram Bot',
+    shortDesc: 'Рулетка-чатбот на aiogram с интерактивными командами',
+    fullDesc:
+      'Telegram-бот рулетки на Python + aiogram. FSM, middleware, модульные хендлеры. ' +
+      'Случайный выбор, статистика, мини-игры и кастомные команды.',
+    technologies: ['Python', 'aiogram', 'SQLite', 'Redis'],
+    stack: ['Docker', 'systemd'],
+    status: 'Demo',
+    github: 'https://github.com/Niperx/TelegramRoulette_v2',
+    objectType: 'phone',
+    accentColor: 'teal',
+    position: [-4, 1.0, -2],
+    commands: [
+      { cmd: '/start', response: '👋 Привет! Я TelegramRoulette v2.\n\n/roll — кубик\n/stats — статистика' },
+      { cmd: '/roll', response: '🎲 Выпало: **17** из 100!' },
+      { cmd: '/stats', response: '📊 Бросков: 42 · Лучший: 97' },
+      { cmd: '/help', response: '📖 /start · /roll · /stats · /joke' },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Niperx VPN',
+    category: 'VPN',
+    shortDesc: 'Self-hosted VPN с WireGuard и мониторингом',
+    fullDesc:
+      'Приватный VPN: WireGuard-туннели, ротация ключей, DNS-over-HTTPS, ' +
+      'split-tunneling и панель мониторинга трафика.',
+    technologies: ['WireGuard', 'Linux', 'Docker', 'Prometheus'],
+    protocols: ['WireGuard', 'OpenVPN', 'DoH', 'IKEv2'],
+    stack: ['Ubuntu', 'Nginx', 'Grafana', 'Ansible'],
+    status: 'Private',
+    objectType: 'shield',
+    accentColor: 'teal',
+    position: [0, 1.1, -3.5],
+  },
+  {
+    id: 3,
+    title: 'ARCdle',
+    category: 'Website',
+    shortDesc: 'Ежедневные guessing-игры для фанатов ARC Raiders',
+    fullDesc:
+      'Веб-приложение с ежедневными мини-играми: оружие, карты, навыки, звуки. ' +
+      'Streak-система, шаринг результатов.',
+    technologies: ['TypeScript', 'React', 'Vite', 'TailwindCSS'],
+    stack: ['Vercel', 'Edge Functions'],
+    status: 'Live',
+    github: 'https://github.com/Niperx/ARCdle',
+    liveUrl: 'https://arcdle.vercel.app',
+    objectType: 'panel',
+    accentColor: 'lemon',
+    position: [4, 1.2, -2.5],
+  },
+  {
+    id: 4,
+    title: 'PalworldManager',
+    category: 'Telegram Bot',
+    shortDesc: 'Telegram-бот для управления dedicated-сервером Palworld',
+    fullDesc:
+      'Бот + веб-панель: статус сервера, управление игроками, рестарты и мониторинг.',
+    technologies: ['Python', 'aiogram', 'FastAPI', 'Docker'],
+    stack: ['REST API', 'PostgreSQL', 'Redis'],
+    status: 'Live',
+    github: 'https://github.com/Niperx/PalworldManager',
+    objectType: 'phone',
+    accentColor: 'lemon',
+    position: [-2, 0.9, -4.5],
+    commands: [
+      { cmd: '/status', response: '🟢 Сервер **ONLINE**\n👥 8/32' },
+      { cmd: '/players', response: '👥 Niperx Lv.45 · Player2 Lv.32' },
+      { cmd: '/restart', response: '⚠️ Перезапуск через 60 сек...' },
+    ],
+  },
+  {
+    id: 5,
+    title: 'KvantWars',
+    category: 'Other',
+    shortDesc: 'Браузерная multiplayer strategy в реальном времени',
+    fullDesc: 'Real-time multiplayer strategy с общими 30-секундными ходами.',
+    technologies: ['Python', 'WebSocket', 'Canvas 2D'],
+    stack: ['Flask', 'Socket.io'],
+    status: 'Live',
+    github: 'https://github.com/Niperx/KvantWars',
+    objectType: 'crystal',
+    accentColor: 'teal',
+    position: [2.5, 0.8, -4],
+  },
+  {
+    id: 6,
+    title: 'SpaceChaos',
+    category: 'Other',
+    shortDesc: 'Multiplayer browser game — ты планета',
+    fullDesc: 'Мультиплеерная игра: экономика, флот, PvP, астероиды. Canvas 2D + Socket.io.',
+    technologies: ['HTML5', 'Canvas', 'Socket.io', 'Node.js'],
+    status: 'Demo',
+    github: 'https://github.com/Niperx/SpaceChaos',
+    objectType: 'neuron',
+    accentColor: 'lemon',
+    position: [0, 0.9, -1.5],
+  },
+];
+
+export const categories = [
+  'All',
+  'Telegram Bot',
+  'Discord Bot',
+  'Website',
+  'VPN',
+  'Tool',
+  'Other',
+] as const;
