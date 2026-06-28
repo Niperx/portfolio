@@ -25,7 +25,7 @@ export function sketchMat(
 
 /** Пресеты материалов сцены */
 export const MAT = {
-  floor: () => sketchMat(MONO.mid),
+  floor: () => sketchMat(MONO.paper),
   podium: () => sketchMat(MONO.dark),
   object: () => sketchMat(MONO.light),
   objectDark: () => sketchMat(MONO.gray),

@@ -22,7 +22,7 @@ export type AccentColor = keyof typeof ACCENT;
 export const SCENE_COLORS = {
   bg: MONO.black,
   fog: MONO.fog,
-  floor: MONO.mid,
+  floor: MONO.paper,
 } as const;
 
 export function getAccentColor(color?: AccentColor): string {

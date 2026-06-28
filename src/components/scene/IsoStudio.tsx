@@ -14,12 +14,31 @@ interface IsoStudioProps {
  */
 export function IsoStudio({ minimal = false }: IsoStudioProps) {
   const floorMat = useMemo(() => {
-    const mat = sketchMat(MONO.mid);
+    const mat = sketchMat(MONO.paper);
     mat.map = getPaperTexture();
     return mat;
   }, []);
 
+  const tileMat = useMemo(() => sketchMat(MONO.white, { opacity: 0.28 }), []);
   const wallMat = useMemo(() => sketchMat(MONO.dark), []);
+
+  const floorTiles = useMemo(() => {
+    const tiles: Array<{ position: [number, number, number]; visible: boolean }> = [];
+    const tileSize = 2;
+    const tileCount = 11;
+    const start = -((tileCount - 1) * tileSize) / 2;
+
+    for (let x = 0; x < tileCount; x++) {
+      for (let z = 0; z < tileCount; z++) {
+        tiles.push({
+          position: [start + x * tileSize, 0.002, start + z * tileSize],
+          visible: (x + z) % 2 === 0,
+        });
+      }
+    }
+
+    return tiles;
+  }, []);
 
   return (
     <group>
@@ -28,16 +47,26 @@ export function IsoStudio({ minimal = false }: IsoStudioProps) {
         <planeGeometry args={[22, 22]} />
       </mesh>
 
+      {/* Крупная бумажная плитка пола */}
+      {floorTiles.map(
+        (tile, i) =>
+          tile.visible && (
+            <mesh key={i} rotation={[-Math.PI / 2, 0, 0]} position={tile.position} receiveShadow material={tileMat}>
+              <planeGeometry args={[1.85, 1.85]} />
+            </mesh>
+          ),
+      )}
+
       {/* Изометрическая сетка */}
       <Grid
         position={[0, 0.005, 0]}
         args={[22, 22]}
         cellSize={1}
-        cellThickness={0.5}
-        cellColor="#3a3a3a"
+        cellThickness={0.35}
+        cellColor="#6b6b6b"
         sectionSize={4}
-        sectionThickness={0.8}
-        sectionColor="#555555"
+        sectionThickness={0.65}
+        sectionColor="#8a8a8a"
         fadeDistance={20}
         fadeStrength={1}
         infiniteGrid={false}
